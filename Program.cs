@@ -12,8 +12,7 @@ namespace Errors_and_Exceptions
         {
             // Part 1
             Circle circle = new Circle();
-            circle.CircleCircumference();
-            circle.CircleArea();
+            circle.Show();
             // Part 2
             VolumeHemi();
             // Part 3

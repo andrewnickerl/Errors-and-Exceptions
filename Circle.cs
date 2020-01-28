@@ -8,33 +8,22 @@ namespace Errors_and_Exceptions
 {
     class Circle
     {
-        double radius;
-
-        private double CircleCircumference()
+        private double Circumference(double radius)
         {
-            Console.WriteLine("Part 1, circumference and area of a circle.");
-            Console.Write("Enter an integer for the radius: ");
-            radius = double.Parse(Console.ReadLine());
-
-            double circumference = 2 * Math.PI * radius; //calculate circumference
-
-            Console.WriteLine($"The circumference is {circumference}");  //output circumference
+            return 2 * Math.PI * radius; //calculate and return circumference
         }
-        private double CircleArea()
+        private double Area(double radius)
         {
-            Console.WriteLine("Part 1, circumference and area of a circle.");
-            Console.Write("Enter an integer for the radius: ");
-            radius = double.Parse(Console.ReadLine());
-
             return Math.PI * Math.Pow(radius, 2); //calculate and return area
-
-            Console.WriteLine($"The area is {area}");  //output circumference
         }
-        public string ShowCalculations()
+        public void Show()
         {
-            return $""
+            Console.WriteLine("Part 1, circumference and area of a circle.");
+            Console.Write("Enter an integer for the radius: ");
+            double radius = double.Parse(Console.ReadLine());  //prompt input for radius
+            
+            Console.WriteLine($"The circumference is {Circumference(radius)}."); //pass radius to Circumference() and output circumference
+            Console.WriteLine($"The area is {Area(radius)}."); //pass radius to Area() and output area
         }
-
-
     }
 }
