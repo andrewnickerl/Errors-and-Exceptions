@@ -16,7 +16,7 @@ namespace Errors_and_Exceptions
         public void Show()
         {
             double side1 = 0, side2 = 0, side3 = 0;
-            Console.WriteLine("\nPart 3, area of a triangle (Heron's formula).");
+            Console.WriteLine("Part 3, area of a triangle (Heron's formula).");
             Console.Write("Enter a length for the first side: ");
             try
             {

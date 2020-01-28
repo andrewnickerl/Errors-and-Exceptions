@@ -26,7 +26,7 @@ namespace Errors_and_Exceptions
         }
         public void Show()
         {
-            Console.WriteLine("\nPart 4, solving a quadratic equation.");
+            Console.WriteLine("Part 4, solving a quadratic equation.");
             Console.Write("Enter a: ");
             double a = double.Parse(Console.ReadLine()); //input a
             Console.Write("Enter b: ");
@@ -36,7 +36,7 @@ namespace Errors_and_Exceptions
 
             try
             {
-                Console.WriteLine($"\nThe first solution is {SolutionOne(a, b, c)}.");  //output solution 1 for x
+                Console.WriteLine($"The first solution is {SolutionOne(a, b, c)}.");  //output solution 1 for x
             }
             catch(Exception ex)
             {

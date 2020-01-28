@@ -15,7 +15,7 @@ namespace Errors_and_Exceptions
         public void Show()
         {
             double radius = 0;
-            Console.WriteLine("\nPart 2, volume of a hemisphere.");
+            Console.WriteLine("Part 2, volume of a hemisphere.");
             Console.Write("Enter an integer for the radius: ");            
             try
             {
