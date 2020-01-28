@@ -33,11 +33,13 @@ namespace Errors_and_Exceptions
             {
                 Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Invalid input.  Please enter a positive number.");
                 Show();
+                return;
             }
             
             Console.WriteLine($"The circumference is {Circumference(radius)}."); //pass radius to Circumference() and output circumference

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Errors_and_Exceptions
 {
-    class Hemisphere
+    public class Hemisphere
     {
         private double Volume(double radius)
         {
@@ -15,7 +15,7 @@ namespace Errors_and_Exceptions
         public void Show()
         {
             double radius = 0;
-            Console.WriteLine("\nPart 2, volume of a hemisphere.");
+            Console.WriteLine("Part 2, volume of a hemisphere.");
             Console.Write("Enter an integer for the radius: ");            
             try
             {
@@ -29,11 +29,13 @@ namespace Errors_and_Exceptions
             {
                 Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Invalid input.  Please enter a positive number.");
                 Show();
+                return;
             }
 
             Console.WriteLine($"The volume is {Volume(radius)}."); //pass radius to Volume() and output volume

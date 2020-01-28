@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Errors_and_Exceptions
 {
-    class Quadratic
+    public class Quadratic
     {
         private double SolutionOne(double a, double b, double c)
-        {
+        {  //calculates the first solution for a quadratic
             if((Math.Pow(b, 2) - 4.0 * a * c) < 0)
             {
                 throw new Exception();
@@ -17,7 +17,7 @@ namespace Errors_and_Exceptions
             return ((-1.0 * b) + Math.Sqrt(Math.Pow(b, 2) - 4.0 * a * c)) / (2.0 * a);
         }
         private double SolutionTwo(double a, double b, double c)
-        {
+        {  //calculates the second solution for a quadratic
             if ((Math.Pow(b, 2) - 4.0 * a * c) < 0)
             {
                 throw new Exception();
@@ -26,31 +26,61 @@ namespace Errors_and_Exceptions
         }
         public void Show()
         {
-            Console.WriteLine("\nPart 4, solving a quadratic equation.");
+            double a = 0, b = 0, c = 0;
+            Console.WriteLine("Part 4, solving a quadratic equation.");
             Console.Write("Enter a: ");
-            double a = double.Parse(Console.ReadLine()); //input a
-            Console.Write("Enter b: ");
-            double b = double.Parse(Console.ReadLine());  //input b
-            Console.Write("Enter c: ");
-            double c = double.Parse(Console.ReadLine());  //input c
-
-            try
+            try //input a
             {
-                Console.WriteLine($"\nThe first solution is {SolutionOne(a, b, c)}.");  //output solution 1 for x
+                a = double.Parse(Console.ReadLine()); 
             }
-            catch(Exception ex)
+            catch (FormatException fEx)
             {
-                Console.WriteLine("Cannot calculate square root of a negative number.");
+                Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
-            try
+            Console.Write("Enter b: ");
+            try //input b
             {
-                Console.WriteLine($"The second solution is {SolutionTwo(a, b, c)}.");  //output solution 2 for x
+                b = double.Parse(Console.ReadLine());  
+            }
+            catch (FormatException fEx)
+            {
+                Console.WriteLine(fEx.Message);
+                Show();
+                return;
+            }           
+            Console.Write("Enter c: ");
+            try //input c
+            {
+                c = double.Parse(Console.ReadLine());  
+            }
+            catch (FormatException fEx)
+            {
+                Console.WriteLine(fEx.Message);
+                Show();
+                return;
+            }
+
+            try //output solution 1 for x
+            {
+                Console.WriteLine($"The first solution is {SolutionOne(a, b, c)}.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Cannot calculate square root of a negative number.");
                 Show();
+                return;
+            }
+            try //output solution 2 for x
+            {
+                Console.WriteLine($"The second solution is {SolutionTwo(a, b, c)}.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot calculate square root of a negative number.");
+                Show();
+                return;
             }
         }
     }
