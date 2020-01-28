@@ -15,13 +15,68 @@ namespace Errors_and_Exceptions
         }
         public void Show()
         {
+            double side1 = 0, side2 = 0, side3 = 0;
             Console.WriteLine("\nPart 3, area of a triangle (Heron's formula).");
-            Console.Write("Enter a length for the first side: "); 
-            double side1 = double.Parse(Console.ReadLine());  //input first side
+            Console.Write("Enter a length for the first side: ");
+            try
+            {
+                side1 = double.Parse(Console.ReadLine());  //input first side
+                if (side1 <= 0)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (FormatException fEx)
+            {
+                Console.WriteLine(fEx.Message);
+                Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Invalid input.  Please enter a positive number.");
+                Show();
+            }
+            
             Console.Write("Enter a length for the second side: ");
-            double side2 = double.Parse(Console.ReadLine());  //input second side
+            try
+            {
+                side2 = double.Parse(Console.ReadLine());  //input second side
+                if (side2 <= 0)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (FormatException fEx)
+            {
+                Console.WriteLine(fEx.Message);
+                Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Invalid input.  Please enter a positive number.");
+                Show();
+            }
+          
             Console.Write("Enter a length for the third side: ");
-            double side3 = double.Parse(Console.ReadLine());  //input third side
+            try
+            {
+                side3 = double.Parse(Console.ReadLine());  //input third side
+                if (side3 <= 0)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (FormatException fEx)
+            {
+                Console.WriteLine(fEx.Message);
+                Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Invalid input.  Please enter a positive number.");
+                Show();
+            }
+          
 
             Console.WriteLine($"The area is {Area(side1, side2, side3)}."); 
         }

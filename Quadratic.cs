@@ -10,11 +10,19 @@ namespace Errors_and_Exceptions
     {
         private double SolutionOne(double a, double b, double c)
         {
-            return ((-1.0 * b) + Math.Sqrt(Math.Pow(b, 2) - 4.0 * a * c)) / 2.0 * a;
+            if((Math.Pow(b, 2) - 4.0 * a * c) < 0)
+            {
+                throw new Exception();
+            }
+            return ((-1.0 * b) + Math.Sqrt(Math.Pow(b, 2) - 4.0 * a * c)) / (2.0 * a);
         }
         private double SolutionTwo(double a, double b, double c)
         {
-            return ((-1.0 * b) - Math.Sqrt(Math.Pow(b, 2) - 4.0 * a * c)) / 2.0 * a;
+            if ((Math.Pow(b, 2) - 4.0 * a * c) < 0)
+            {
+                throw new Exception();
+            }
+            return ((-1.0 * b) - Math.Sqrt(Math.Pow(b, 2) - 4.0 * a * c)) / (2.0 * a);
         }
         public void Show()
         {
@@ -26,8 +34,24 @@ namespace Errors_and_Exceptions
             Console.Write("Enter c: ");
             double c = double.Parse(Console.ReadLine());  //input c
 
-            Console.WriteLine($"\nThe first solution is {SolutionOne(a,b,c)}.");  //output solution 1 for x
-            Console.WriteLine($"The second solution is {SolutionTwo(a,b,c)}.");  //output solution 2 for x
+            try
+            {
+                Console.WriteLine($"\nThe first solution is {SolutionOne(a, b, c)}.");  //output solution 1 for x
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Cannot calculate square root of a negative number.");
+                Show();
+            }
+            try
+            {
+                Console.WriteLine($"The second solution is {SolutionTwo(a, b, c)}.");  //output solution 2 for x
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot calculate square root of a negative number.");
+                Show();
+            }
         }
     }
 }
