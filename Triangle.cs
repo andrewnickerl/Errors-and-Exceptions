@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Errors_and_Exceptions
 {
-    class Triangle
+    public class Triangle
     {
         private double Area(double side1, double side2, double side3)
         {
@@ -30,11 +30,13 @@ namespace Errors_and_Exceptions
             {
                 Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Invalid input.  Please enter a positive number.");
                 Show();
+                return;
             }
             
             Console.Write("Enter a length for the second side: ");
@@ -50,11 +52,13 @@ namespace Errors_and_Exceptions
             {
                 Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Invalid input.  Please enter a positive number.");
                 Show();
+                return;
             }
           
             Console.Write("Enter a length for the third side: ");
@@ -70,11 +74,13 @@ namespace Errors_and_Exceptions
             {
                 Console.WriteLine(fEx.Message);
                 Show();
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Invalid input.  Please enter a positive number.");
                 Show();
+                return;
             }
           
 
